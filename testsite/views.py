@@ -11,11 +11,11 @@ def index(request):
     key_i = []
     i = 0
     while i < 9:
-        keys = random.randint(0,9)
+        keys = random.randint(1,9)
         keyz = str(keys)
         if keyz not in key_i:
             key_i = keyz
-            if Questions.objects.get(pk=keys):
+            if  keys in Questions.objects.all():
                 question = Questions.objects.get(pk = keys)
                
                 i += 1
