@@ -11,8 +11,9 @@ TEST :: {{ block.super}}
 {% endblock  %}
 {% block content %}
 
-<div class="col-6"  style="overflow: auto; height: 400px ">
-{% for item in questions %}
+<div class="col-9"  style="overflow: auto; height: 400px; ml-auto ">
+{% if questions %}
+    {% for item in questions %}
 {{ item.question_text }} 
 <br>
     <br>
@@ -34,6 +35,6 @@ TEST :: {{ block.super}}
         <br>
 {% endfor  %}
 <br>
-
+{% endif %}
 </div>
 {% endblock  %}

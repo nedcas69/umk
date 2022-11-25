@@ -15,9 +15,9 @@ def index(request):
         keyz = str(keys)
         if keyz not in key_i:
             key_i = keyz
-            question = Questions.objects.all().filter(pk = keys)
+            question = Questions.objects.all().filter(question_number = keys)
             i += 1
-            # return question    
+            #return key_i    
         else: 
             continue
         

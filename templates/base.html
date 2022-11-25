@@ -13,17 +13,17 @@
 {% autoescape off %}
 
 {% include 'inc/_nav.html' %}
-
+{% comment %}
 <div class="container mt-3">
     <div class="row mr-auto">
         
         <div class='col-md-3'>
-            {% comment %} {% load cache %}
+             {% load cache %}
             {% cache 500 sidebar %} {% endcomment %}
             {% block sidebar %}SIDEBAR{% endblock %}
             {% comment %} {% endcache %} {% endcomment %}
         </div>
-
+{% comment %} 
         <div class='col-md-9'>
 
             {% if  messages %}
@@ -41,7 +41,7 @@
               
             {% endfor %}
             
-            {% endif %}
+            {% endif %} {% endcomment %}
 
             {% block content %}Content{% endblock %}
             
