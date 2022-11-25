@@ -8,10 +8,10 @@ from testsite.models import *
 
 def index(request):
     question = Questions.objects.all()
-    keys = random.randint(0,9)
     key_i = []
     i = 0
     while i < 9:
+        keys = random.randint(0,9)
         keyz = str(keys)
         if keyz not in key_i:
             key_i = keyz
