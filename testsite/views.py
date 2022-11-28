@@ -9,20 +9,31 @@ from testsite.models import *
 def index(request):
     question = Questions.objects.all()
     key_i = []
+    voprosy = {}
     i = 0
     while i < 9:
-        keys = random.randint(1,10)
+        keys = random.randint(0,8)
         keyz = str(keys)
+        
         if keyz not in key_i:
-            key_i = keyz
-            question = Questions.objects.all().filter(question_number = keys)
+            key_i.append(keyz)
             i += 1
-            #return key_i    
         else: 
             continue
-        
 
-    return render(request, 'testsite/questions_list.html', {'questions': question } )
+    for item in key_i:
+        question = Questions.objects.filter(question_number = item)           
+        voprosy[item] = question       
+        
+    print(key_i)
+    print(voprosy)
+
+    return render(request, 'testsite/questions_list.html', {'questions': voprosy })
+                
+   
+           
+    
+        
 
 
 
