@@ -19,7 +19,7 @@ def quiz_view(request, category_slug, quiz_slug):
     quiz_data = {
         'questions': []
     }
-
+    
     for question in questions:
         _html = f'{question.question}</h2>'
         _html += f'<div style="margin:-8px 0 20px">' \

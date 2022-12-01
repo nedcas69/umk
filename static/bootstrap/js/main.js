@@ -31,11 +31,11 @@
           quizScore_text: "Вы набрали %totalScore из %totalQuestions вопросов",
           quizScoreMessage_text: "",
           quizScoreRank_text: {
-            a: "Perfect Score!",
-            b: "Great Job!",
-            c: "At least you passed.",
-            d: "Should have studied more.",
-            f: "Did you even try?"
+            a: "Вы успешно прошли!",
+            b: "Вы непрошли.",
+            c: "Вы непрошли.",
+            d: "Вы непрошли.",
+            f: "Вы непрошли."
           },
   
           /* Options
@@ -296,7 +296,7 @@
             resultsHTML += plugin.config.quizScoreRank_text.a;
           } else if ( totalScore > 60 ) {
             //rank 2: 60-79
-            resultsHTML += plugin.config.quizScoreRank_text.b;
+            resultsHTML += plugin.config.quizScoreRank_text.f;
           } else if ( totalScore > 40 ) {
             //rank 3: 40-59
             resultsHTML += plugin.config.quizScoreRank_text.c;

@@ -12,4 +12,4 @@ class QuestionModelAdmin(ModelAdmin):
     inlines = (
         AnswerTabularInline,
     )
-    list_display = ('question', 'quiz')
+    list_display = ('id','question', 'quiz')
